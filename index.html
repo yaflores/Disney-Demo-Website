@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,700;1,400&display=swap" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <div class="overlay" id="overlayVideo">
+        <button class="btn-ui-large btn-close" id="overlayCloseBtn">
+            <img 
+                src="assets/icons/close.svg" 
+                alt="Close icon"
+            >
+        </button>
+        <div class="overlay-container" id="overlayContainer">
+            <div class="overlay-embed">
+            </div> <!-- end of embed div -->
+        </div> <!-- end of video container -->
+    </div> <!-- end of overlay-->
+    <nav class="nav-mobile" id="navMobile">
+        <button class="btn-ui btn-ui-close" id="navBtnClose">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512">   
+            <path d="M310.6 150.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L160 210.7 54.6 105.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L114.7 256 9.4 361.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L160 301.3 265.4 406.6c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L205.3 256 310.6 150.6z" />
+        </svg>
+        </button>
+        <img 
+            src="assets/logos/disney-plus-black.svg" 
+            alt="Disney Plus logo"
+            class="nav-mobile-logo"
+            width="200"
+        >
+    </nav>
+    <header>
+        <img src="assets/logos/disney-plus.svg" alt="Disney Plus logo" class="logo">
+        <nav class="nav-desktop" id="navDesktop">
+        </nav>
+        <button class="btn-ui btn-teal btn-menu" id="btnMenu">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+                <path
+                    d="M0 96C0 78.3 14.3 64 32 64H416c17.7 0 32 14.3 32 32s-14.3 32-32 
+                    32H32C14.3 128 0 113.7 0 96zM0 256c0-17.7 14.3-32 32-32H416c17.7 0 
+                    32 14.3 32 32s-14.3 32-32 32H32c-17.7 0-32-14.3-32-32zM448 416c0 
+                    17.7-14.3 32-32 32H32c-17.7 0-32-14.3-32-32s14.3-32 32-32H416c17.7 
+                    0 32 14.3 32 32z" />
+            </svg>
+        </button>
+    </header>
+    <main>
+        <section class="section-showcase" id="sectionShowcase">
+        </section> <!-- end of section showcase -->
+        <section class="section-episodes" id="sectionEpisodes">
+        </section>
+        <section class="section-brands">
+            <h2>Featured brands</h2>
+            <div class="brands-crop">
+                <div class="brands-row" id="brandsRow"></div>
+            </div> <!-- /brands-crop -->
+        </section>
+        <section class="section-category ">
+            <h2>Animated Adventures</h2>
+            <div class="categories-crop">
+                <div class="categories-row" id="categoriesRow"></div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-meta">
+            <nav class="nav-social">
+                <ul>
+                    <li class="">
+                        <a href="https://www.facebook.com/disney-plus" target="_blank">
+                            <img src="assets/icons/facebook.svg" alt="Facebook icon">
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://www.twitter.com/disney-plus" target="_blank">
+                            <img src="assets/icons/twitter.svg" alt="Twitter icon">
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://www.instagram.com/disney-plus" target="_blank">
+                            <img src="assets/icons/instagram.svg" alt="Instagram icon">
+                        </a>
+                    </li>
+                </ul>
+            </nav> <!-- /nav-social-->
+            <p>Copyright 2022-23 Disney Plus, Inc.</p>
+        </div> <!-- /footer meta -->
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script src="js/nav.js"></script>
+    <script src="js/showcase.js"></script>
+    <script src="js/brands.js"></script>
+    <script src="js/animated.js"></script>
+</body>
+
+</html>

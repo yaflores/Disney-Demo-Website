@@ -1,0 +1,588 @@
+h1, h2, h3, h4, h5, h6, p, ul, li {
+    padding: 0;
+    margin: 0;
+    font: inherit;
+}
+ul, li {
+    list-style: none; /* remove the bullet points */
+}
+* {
+    box-sizing: border-box; /* invert the box model */
+}
+img {
+    vertical-align: top; /* eliminate the 1px space below the image */
+}
+.responsive-img {
+    width: 100%;
+    height: auto;
+}
+body {
+    /* background: yellow; */
+    font-family: 'Roboto', sans-serif;
+}
+h2 {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: white;
+    margin-bottom: 1rem;
+}
+h3 {
+    font-size: 1.25rem;
+    font-weight: bold;
+    color: white;
+    margin-bottom: .5rem;
+}
+p {
+    font-size: 1rem;
+    color: white;
+    margin-bottom: 1rem;
+}
+p.episode-duration {
+    font-size: .8rem;
+    color: lightgray;
+}
+.container {
+    width: 100%;
+    padding-left: 1rem;
+    padding-right: 1rem;
+}
+.overlay {
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0,0,0,.8);
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 2000;
+    display: none;
+}
+.overlay.active {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.overlay .btn-close {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+}
+.overlay-container {
+    width: 100%;
+    padding-left: 1rem;
+    padding-right: 1rem;
+}
+.overlay-embed {
+    position: relative;
+    display: block;
+    width: 100%;
+    padding: 0;
+    overflow: hidden;
+}
+.overlay-embed::before {
+    display: block;
+    content: "";
+    padding-top: 56.25%;
+}
+.overlay-embed iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+.nav-mobile {
+    width: 100vw;
+    height: 100vh;
+    padding: 2rem;
+    background-color: #00ffc4;
+    position: fixed;
+    top: 0;
+    left: -100vw;
+    z-index: 1000;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    transition: all .5s;
+}
+.nav-mobile.active {
+    left: 0;
+}
+.nav-mobile-list li a {
+    font-size: 2rem;
+    font-weight: bold;
+    color: black;
+    display: block;
+    padding-top: .5rem;
+    padding-bottom: .5rem;
+}
+header {
+    background-color: black;
+    padding: 1rem; /* this means all sides are 1rem so include top n bottom */
+    height: 5rem;
+    display: flex;
+    justify-content: space-between;
+}
+.logo {
+    height: 3rem;
+    width: auto;
+}
+.nav-desktop {
+    display: none;
+}
+.btn-ui {
+    width: 3rem;
+    height: 3rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 0;
+    background-color: transparent;
+}
+.btn-ui img, .btn-ui svg {
+    width: 1.5rem;
+    height: auto;
+}
+.btn-teal path {
+    fill: #00ffc4;
+}
+main {
+    /* background-color: aqua; */
+}
+.section-showcase {
+    /* background-color: purple; */
+    height: calc(100vh - 5rem);
+    position: relative;
+}
+.showcase-controls {
+    width: 100%;
+    height: .5rem;
+    /* background-color: limegreen; */
+    position: absolute;
+    bottom: 1rem;
+    left: 0;
+    z-index: 5;
+    display: flex;
+    gap: 1rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+}
+.showcase-item.active .showcase-item-content {
+    background-color: black;
+}
+.showcase-active .showcase-controls {
+    display: none;
+}
+.showcase-controls li {
+    height: 100%;
+    width: 100%;
+    background-color: white;
+    display: block;
+}
+.showcase-controls li.active {
+    background-color: #00ffc4;
+}
+.showcase-item {
+    /* background-color: gold; */
+    background-size: cover;
+    background-repeat: no-repeat;
+    /* background-position: right center; */
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: none;
+}
+.showcase-item.visible {
+    display: block;
+}
+.showcase-item::before {
+    content:'';
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    background: rgb(0, 0, 0);
+    background: linear-gradient(180deg, rgba(0,0,0,0) 0%, rgba(0,0,0,1) 100%);
+}
+.showcase-item-content {
+    /* background-color: pink; */
+    position: absolute;
+    bottom: 3rem;
+    left: 0;
+    width: 100%;
+    text-align: center;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem;
+}
+.showcase-item-logo {
+    width: 10rem;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+}
+.showcase-item-excerpt {
+    display: none;
+    color: white;
+    font-size: 1.1rem;
+}
+.showcase-item.active .showcase-item-excerpt {
+    display: block;
+}
+.btn {
+    background-color: #00ffc4;
+    border: 0;
+    font-size: 1rem;
+    font-weight: bold;
+    color: black;
+    padding: .75rem 1.5rem;
+    border-radius: .5rem
+}
+.btn-play {
+    display: none;
+}
+.showcase-item.active .btn-play {
+    display: inline-block;
+}
+.btn-ui-large {
+    width: 5rem;
+    height: 5rem;
+    background-color: #00ffc4;
+    border: 0;
+    border-radius: 500px;
+}
+.btn-ui-large img {
+    width: 2rem;
+    height: auto;
+}
+.btn-ui-close {
+    border: 1px solid black;
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    border-radius: 500px;
+
+}
+.btn-expand {
+    /* opacity: 0;
+    transition: all .5s;
+    visibility: hidden;
+    display: none; */
+}
+.btn-expand img {
+    width: 3rem;
+    height: auto;
+}
+.showcase-item.active .btn-expand {
+    display: none;
+}
+.btn-collapse {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    z-index: 3;
+    transition: all .5s;
+    display: none;
+}
+.showcase-item.active .btn-collapse {
+    display: block;
+}
+.section-episodes {
+    display: none;
+    background-color: black;
+    padding: 1rem;
+}
+.section-episodes.active {
+    display: block;
+}
+.season-header {
+    /* background-color: red; */
+    border-bottom: 1px solid gray;
+    margin-bottom: 1rem;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+}
+.episode img {
+    width: 100%;
+    height: auto;
+    margin-bottom: 1rem;
+}
+.section-brands {
+    background-color: black;
+    padding: 1rem;
+}
+.showcase-active .section-brands {
+    display: none;
+}
+.brands-crop {
+    overflow-x: scroll;
+}
+.brands-row {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+    width: 1400px;
+}
+.brands-item {
+    /* background-color: orange; */
+    width: 250px;
+    border: 1px solid white;
+    position: relative;
+}
+.brands-item img {
+    width: 100%;
+    height: auto;
+    position: relative; /* whennever u add relative, u can do z indexs and allow for it to be above videos */
+    z-index: 1;
+}
+.brands-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 0;
+    width: 100%;
+    height: 100%;
+    visibility: hidden;
+    opacity: 0;
+    transition: all .5s;
+}
+.brands-item:hover .brands-video, .brands-item:focus .brands-video {
+    visibility: visible;
+    opacity: 1;
+}
+.section-category {
+    background-color: black;
+    padding: 1rem;
+}
+.showcase-active .section-category {
+    display: none;
+}
+.categories-row {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+    width: 1400px;
+}
+.category-item {
+    /* background-color: orange; */
+    width: 200px;
+    border: 1px solid white;
+}
+.category-item img {
+    width: 100%;
+    height: auto;
+}
+.categories-crop {
+    overflow-x: scroll;
+}
+footer {
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    background-color: black;
+    text-align: center;
+}
+footer p {
+    color: white;
+}
+.showcase-active footer {
+    display: none;
+}
+.nav-footer {
+    display: none;
+}
+.nav-social ul {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+.nav-social img {
+    height: 1.5rem;
+    width: auto;
+}
+@media (min-width:700px) {
+    body {
+        /* background-color: orange; */
+    }
+    .container, .overlay-container {
+        width: 800px;
+    }
+} /* end of tablet */
+
+@media (min-width:1000px) {
+    body {
+        /* background-color: red; */
+    }
+    .container {
+        width: 800px;
+        margin: 0 auto;
+    }
+    .overlay-container {
+        width: 1000px;
+    }
+    header {
+        justify-content: flex-start;
+        gap: 1rem;
+    }
+    .nav-desktop {
+        display: block;
+        /* background-color: pink; */
+    }
+    .nav-desktop-list {
+        display: flex;
+        gap: 1rem;
+        /* background-color: yellow; */
+        height: 100%;
+        align-items: center;
+    }
+    .nav-desktop-list-item {
+        /* background-color: orange; */
+    }
+    .nav-desktop-list-item a {
+        font-family: 'Roboto', sans-serif;
+        font-weight: bold;
+        color: white;
+        text-decoration: none;
+        display: flex;
+        align-items: center;
+        gap: .5rem;
+    }
+    .nav-desktop-list-item a img {
+        width: 1rem;
+        height: auto;
+    }
+    .btn-menu {
+        display: none;
+    }
+    .btn-expand {
+        display: none;
+    }
+    .section-showcase {
+        display: flex;
+    }
+    .showcase-controls {
+        display: none;
+    }
+    .showcase-item {
+        display: block;
+        position: relative;
+        transition: all .5s;
+        flex-basis: 0; /* if you dont set it to 0, it will set to auto*/
+        flex-grow: 1;
+    }
+    .showcase-item:hover {
+        background-color: white;
+        flex-grow: 1.1;
+    }
+    .showcase-item:hover .btn-expand {
+        display: inline-block;
+        opacity: 1;
+        visibility: visible;
+    }
+    .showcase-item.active {
+        flex-grow: 20;
+    }
+    .showcase-item.active .showcase-item-content{
+        background-color: transparent;
+        left: 4rem;
+        bottom: 50%;
+        transform: translateY(50%);
+        width: 35%;
+        text-align: left;
+        display: flex;
+        align-items: flex-start;
+    }
+    .showcase-item.active .showcase-item-logo {
+        margin: 0;
+    }
+    .showcase-item.active .btn-play {
+        display: inline-block;
+    }
+    .showcase-item.active .showcase-item-excerpt {
+        display: block;
+        color: white;
+        font-size: 1.1rem;
+    }
+    .showcase-item.active .btn-expand {
+        opacity: 0;
+        visibility: hidden;
+        display: none;
+    }
+    .showcase-item.active .btn-collapse {
+        visibility: visible;
+    }
+    .showcase-active .showcase-item:not(.active) .showcase-item-content {
+        display: none;
+    }
+    .season-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    .episode {
+        display: flex;
+        gap: 1rem;
+    }
+    .episode img {
+        width: 250px;
+    }
+    .episode-text {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+    .brands-crop {
+        overflow:hidden;
+    }
+    .categories-crop {
+        overflow: hidden;
+    }
+    footer {
+        padding-top: .5rem;
+        text-align: left;
+        align-items: center;
+    }
+    .nav-footer {
+        display: block;
+        /* background-color: aqua; */
+    }
+    .nav-footer > ul {
+        display: flex;
+    }
+    .footer-meta {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    .nav-social {
+        display: flex;
+        align-items: center;
+        margin: 1rem;
+        order: 2;
+    }
+    .footer-meta p {
+        margin: 1rem;
+        order: 1;
+    }
+} /* end of laptop */
+
+@media (min-width:1200px) {
+    body {
+        /* background-color: violet; */
+    }
+    .container {
+        width: 1000px;
+    }
+    .overlay-container {
+        width: 1200px;
+    }
+} /* end of desktop */
+
+
